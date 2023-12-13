@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "minVersion": "0.8.5",
+  "package": "me.nelonn.coprolite.paper.mixin",
+  "target": "@env(DEFAULT)",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "MixinCraftServer",
+    "MixinFileProviderSource",
+    "MixinPaperPluginsCommand"
+  ]
+}
