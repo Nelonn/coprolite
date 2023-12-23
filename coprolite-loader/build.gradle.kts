@@ -21,9 +21,9 @@ dependencies {
     api("org.ow2.asm:asm-tree:${asm_version}")
     api("org.ow2.asm:asm-util:${asm_version}")
 
-    api("net.fabricmc:mapping-io:0.4.2")
-    api("net.fabricmc:tiny-mappings-parser:0.3.0+build.17")
-    api("net.fabricmc:tiny-remapper:0.8.2")
+    //api("net.fabricmc:mapping-io:0.4.2")
+    //api("net.fabricmc:tiny-mappings-parser:0.3.0+build.17")
+    //api("net.fabricmc:tiny-remapper:0.8.2")
 
     compileOnly("org.slf4j:slf4j-api:2.0.9")
 

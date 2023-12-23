@@ -91,48 +91,42 @@ public class PaperclipServerProvider implements IServerProvider {
                 throw new RuntimeException(e);
             }
         }).toList();
-        if (transformer != null) {
-            transformer.locateEntrypoints(launcher, classPath);
-        }
-        for (Path path : classPath) {
-            launcher.addToClassPath(path);
-        }
         /*if (transformer != null) {
             transformer.locateEntrypoints(launcher, classPath);
         }*/
+        for (Path path : classPath) {
+            launcher.addToClassPath(path);
+        }
     }
 
     @Override
     public void execute(String[] args) {
+        /*URL[] classpathUrls = new URL[0];
+        ClassLoader parentClassLoader = PaperclipServerProvider.class.getClassLoader().getParent();
+        URLClassLoader classLoader = new URLClassLoader(classpathUrls, parentClassLoader);*/
+
         final String mainClassName;
         try {
             Method findMainClass = paperclipClass.getDeclaredMethod("findMainClass");
             findMainClass.trySetAccessible();
             mainClassName = (String) findMainClass.invoke(null);
-        } catch (Exception e) {
+        } catch (Throwable e) {
             throw new RuntimeException(e);
         }
 
         System.out.println("Starting " + mainClassName);
 
-        try {
-            Class.forName("org.bukkit.plugin.java.JavaPlugin");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
         Thread runThread = new Thread(() -> {
             try {
                 //final Class<?> mainClass = Class.forName(mainClassName, true, classLoader);
                 final Class<?> mainClass = Class.forName(mainClassName);
-                final MethodHandle mainHandle = MethodHandles.lookup()
-                        .findStatic(mainClass, "main", MethodType.methodType(void.class, String[].class))
-                        .asFixedArity();
+                final MethodHandle mainHandle = MethodHandles.lookup().findStatic(mainClass, "main", MethodType.methodType(void.class, String[].class)).asFixedArity();
                 mainHandle.invoke((Object) args);
             } catch (final Throwable t) {
                 throw new RuntimeException(t);
             }
         }, "ServerMain");
+        //runThread.setContextClassLoader(classLoader);
         runThread.setContextClassLoader(CoproliteLauncher.getInstance().getTargetClassLoader());
         runThread.start();
     }
