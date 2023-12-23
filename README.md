@@ -8,7 +8,7 @@
 ## How to run with PaperMC
 
 ```shell
-java -Xmx4G -Dcoprolite.jar=./paper-1.20.2-280.jar -jar coprolite-launcher-0.0.1.jar nogui
+java -Xmx4G -Dcoprolite.jar=./paper-1.20.4-340.jar -jar coprolite-launcher-0.0.1.jar nogui
 ```
 
 ## Plugin structure
