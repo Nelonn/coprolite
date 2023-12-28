@@ -17,5 +17,5 @@
 package me.nelonn.coprolite.api;
 
 public interface PluginInitializer {
-    void onInitialize();
+    void onInitialize(PluginContainer pluginContainer);
 }

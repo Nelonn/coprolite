@@ -147,8 +147,8 @@ public class CoproliteLoaderImpl implements CoproliteLoader {
                 }
 
                 PluginInitializer pluginInitializer = initializerClass.getConstructor().newInstance();
-                pluginInitializer.onInitialize();
-            } catch (Exception e) {
+                pluginInitializer.onInitialize(plugin);
+            } catch (Throwable e) {
                 throw new RuntimeException(String.format("Failed to setup plugin %s (%s)", plugin.getMetadata().getName(), plugin.getMetadata().getId()), e);
             }
         }
