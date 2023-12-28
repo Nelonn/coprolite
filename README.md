@@ -48,7 +48,7 @@ java -Xmx4G -Dcoprolite.jar=./paper-1.20.4-340.jar -jar coprolite-launcher-0.0.1
 ## Project layout
 
 - `coprolite-api` contains Сoprolite loader api
-- `coprolite-loader` contains platform-independent implementation of Сoprolite loader _(if desired, it can be used at least as a Client mod loader)_
+- `coprolite-loader` contains platform-independent implementation of Сoprolite loader _(if desired, it can be used at least as the client mod loader)_
 - `coprolite-launcher` contains launcher for Сoprolite loader, usually for PaperMC and its forks
 - `coprolite-paper` contains a couple of Mixins for PaperMC that fix several conflicts
 
