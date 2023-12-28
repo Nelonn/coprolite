@@ -1,4 +1,6 @@
-# Coprolite (WORK IN PROGRESS)
+# Coprolite
+
+(WORK IN PROGRESS)
 
 ### Minecraft ~~core~~ server launcher
 
@@ -10,6 +12,8 @@
 ```shell
 java -Xmx4G -Dcoprolite.jar=./paper-1.20.4-340.jar -jar coprolite-launcher-0.0.1.jar nogui
 ```
+
+Additionally install [Coprolite Paper](https://github.com/Nelonn/coprolite-paper) into plugins directory
 
 ## Plugin structure
 
@@ -36,7 +40,7 @@ java -Xmx4G -Dcoprolite.jar=./paper-1.20.4-340.jar -jar coprolite-launcher-0.0.1
 {
   "required": true,
   "minVersion": "0.8.5",
-  "package": "your.plugin.mixin",
+  "package": "your.package.mixin",
   "target": "@env(DEFAULT)",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
@@ -50,7 +54,6 @@ java -Xmx4G -Dcoprolite.jar=./paper-1.20.4-340.jar -jar coprolite-launcher-0.0.1
 - `coprolite-api` contains Сoprolite loader api
 - `coprolite-loader` contains platform-independent implementation of Сoprolite loader _(if desired, it can be used at least as the client mod loader)_
 - `coprolite-launcher` contains launcher for Сoprolite loader, usually for PaperMC and its forks
-- `coprolite-paper` contains a couple of Mixins for PaperMC that fix several conflicts
 
 ## Credit
 
