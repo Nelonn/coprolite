@@ -17,6 +17,8 @@ Additionally install [Coprolite Paper](https://github.com/Nelonn/coprolite-paper
 
 ## Plugin structure
 
+See [example plugin](https://github.com/Nelonn/coprolite-example-plugin)
+
 `coprolite.plugin.json`
 
 ```json
