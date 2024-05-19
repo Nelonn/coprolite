@@ -1,10 +1,10 @@
 # Coprolite
 
-(WORK IN PROGRESS)
-
 ### Minecraft ~~core~~ server launcher
 
-## Features
+It's a stripped down version of Fabric Loader.
+
+## Features 
 - Mixin [(Fabric Wiki)](https://fabricmc.net/wiki/tutorial:mixin_registration) [(Mixin Wiki)](https://github.com/SpongePowered/Mixin/wiki)
 
 ## How to run with PaperMC
@@ -14,6 +14,8 @@ java -Xmx4G -Dcoprolite.jar=./paper-1.20.4-340.jar -jar coprolite-launcher-0.0.1
 ```
 
 Additionally install [Coprolite Paper](https://github.com/Nelonn/coprolite-paper) into plugins directory
+
+You can manually define plugins directory for coprolite using `-Dcoprolite.pluginsFolder=./coprolite_plugins`, by default it's `./plugins`
 
 ## Plugin structure
 

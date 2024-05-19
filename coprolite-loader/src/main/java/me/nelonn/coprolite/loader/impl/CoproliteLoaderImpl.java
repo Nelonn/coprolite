@@ -105,7 +105,10 @@ public class CoproliteLoaderImpl implements CoproliteLoader {
 
     private void setup() {
         try {
-            Path pluginsPath = Paths.get("./plugins");
+            Path pluginsPath = Paths.get(System.getProperty(SystemProperties.PLUGINS_FOLDER, "./plugins"));
+            if (!pluginsPath.toFile().exists()) {
+                pluginsPath.toFile().mkdirs();
+            }
             PluginDiscoverer discoverer = new PluginDiscoverer(pluginsPath);
             this.pluginCandidates = discoverer.discoverPlugins(this);
 

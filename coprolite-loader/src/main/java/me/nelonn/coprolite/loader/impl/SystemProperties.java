@@ -20,6 +20,7 @@ public final class SystemProperties {
     public static final String LOG_FILE = "coprolite.log.file";
     public static final String LOG_LEVEL = "coprolite.log.level";
     public static final String ADD_PLUGINS = "coprolite.addPlugins";
+    public static final String PLUGINS_FOLDER = "coprolite.pluginsFolder";
     public static final String SERVER = "coprolite.server";
 
     private SystemProperties() {
