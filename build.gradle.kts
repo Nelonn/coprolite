@@ -7,4 +7,9 @@ allprojects {
         header(rootProject.file("HEADER"))
         include("**/*.java")
     }
+
+    tasks.withType<JavaCompile> {
+        options.release.set(21)
+        options.encoding = "UTF-8"
+    }
 }

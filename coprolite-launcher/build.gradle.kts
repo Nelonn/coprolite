@@ -8,6 +8,8 @@ plugins {
 group = rootProject.group
 version = rootProject.version
 
+java.toolchain.languageVersion.set(JavaLanguageVersion.of(21))
+
 repositories {
     mavenCentral()
     maven("https://maven.fabricmc.net/")
@@ -15,10 +17,6 @@ repositories {
 
 dependencies {
     implementation(project(":coprolite-loader"))
-}
-
-tasks.named<JavaCompile>("compileJava") {
-    options.encoding = "UTF-8"
 }
 
 tasks.named<Jar>("jar") {
