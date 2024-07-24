@@ -67,7 +67,7 @@ public final class CoproliteMixinService extends MixinServiceAbstract implements
 
     @Override
     public MixinEnvironment.CompatibilityLevel getMaxCompatibilityLevel() {
-        return MixinEnvironment.CompatibilityLevel.JAVA_17;
+        return MixinEnvironment.CompatibilityLevel.JAVA_21;
     }
 
     @Override
@@ -167,6 +167,11 @@ public final class CoproliteMixinService extends MixinServiceAbstract implements
 
     @Override
     public ClassNode getClassNode(String name, boolean runTransformers) throws ClassNotFoundException {
+        return getClassNode(name, runTransformers, 0);
+    }
+
+    @Override
+    public ClassNode getClassNode(String name, boolean runTransformers, int readerFlags) throws ClassNotFoundException {
         if (!runTransformers) {
             throw new IllegalArgumentException("ModLauncher service does not currently support retrieval of untransformed bytecode");
         }
@@ -177,7 +182,7 @@ public final class CoproliteMixinService extends MixinServiceAbstract implements
             if (classBytes.length != 0) {
                 ClassNode classNode = new ClassNode();
                 ClassReader classReader = new MixinClassReader(classBytes, canonicalName);
-                classReader.accept(classNode, ClassReader.EXPAND_FRAMES);
+                classReader.accept(classNode, readerFlags);
                 return classNode;
             }
         } catch (IOException e) {

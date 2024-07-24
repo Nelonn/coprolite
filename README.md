@@ -46,7 +46,7 @@ See [example plugin](https://github.com/Nelonn/coprolite-example-plugin)
   "minVersion": "0.8.5",
   "package": "your.package.mixin",
   "target": "@env(DEFAULT)",
-  "compatibilityLevel": "JAVA_17",
+  "compatibilityLevel": "JAVA_21",
   "mixins": [
     "MixinCraftServer"
   ]
