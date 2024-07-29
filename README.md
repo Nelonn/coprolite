@@ -17,6 +17,12 @@ Additionally install [Coprolite Paper](https://github.com/Nelonn/coprolite-paper
 
 You can manually define plugins directory for coprolite using `-Dcoprolite.pluginsFolder=./coprolite_plugins`, by default it's `./plugins`
 
+### If you are using PAPERWEIGHT
+
+Set this flag in build script
+
+`paperweight.reobfArtifactConfiguration = io.papermc.paperweight.userdev.ReobfArtifactConfiguration.MOJANG_PRODUCTION`
+
 ## Plugin structure
 
 See [example plugin](https://github.com/Nelonn/coprolite-example-plugin)
